@@ -1,5 +1,10 @@
 import 'package:assignment_app/custom_colors.dart';
-import 'package:assignment_app/tab_provider.dart';
+import 'package:assignment_app/screens/achievement_screen.dart';
+import 'package:assignment_app/screens/projects_screen.dart';
+import 'package:assignment_app/screens/saved_screen.dart';
+import 'package:assignment_app/screens/shared_screen.dart';
+import 'package:assignment_app/providers/tab_provider.dart';
+import 'package:assignment_app/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -36,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavBar(),
       body: Consumer<TabProvider>(
         builder:
             (context, tabProvider, child) => Column(
@@ -78,6 +84,17 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                     ),
+                  ),
+                ),
+                Expanded(
+                  child: IndexedStack(
+                    index: tabProvider.tabNumber,
+                    children: [
+                      ProjectsScreen(),
+                      SavedScreen(),
+                      SharedScreen(),
+                      AchievementScreen(),
+                    ],
                   ),
                 ),
               ],

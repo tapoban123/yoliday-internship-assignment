@@ -1,5 +1,6 @@
 import 'package:assignment_app/home_screen.dart';
-import 'package:assignment_app/tab_provider.dart';
+import 'package:assignment_app/providers/bottom_nav_provider.dart';
+import 'package:assignment_app/providers/tab_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => TabProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => TabProvider()),
+        ChangeNotifierProvider(create: (context) => BottomNavProvider()),
+      ],
       child: MaterialApp(
         title: 'Assignment App',
         debugShowCheckedModeBanner: false,
