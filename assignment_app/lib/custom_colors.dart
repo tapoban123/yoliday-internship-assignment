@@ -9,4 +9,5 @@ class CustomColors {
   static Color textColor = const Color(0xFF303030);
   static Color textGreyColor = const Color(0xFF9E95A2);
   static Color greyColor = const Color(0xFFD6D1D5);
+  static Color whiteColor = const Color(0xFFFFFFFF);
 }

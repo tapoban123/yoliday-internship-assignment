@@ -77,8 +77,7 @@ class _HomeScreenState extends State<HomeScreen>
                               color:
                                   tabProvider.tabNumber == index
                                       ? CustomColors.deepOrangeColor
-                                      : CustomColors.textGreyColor,
-                              fontWeight: FontWeight.bold,
+                                      : CustomColors.textColor,
                             ),
                           ),
                         ),

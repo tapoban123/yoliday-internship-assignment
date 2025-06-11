@@ -1,3 +1,4 @@
+import 'package:assignment_app/custom_colors.dart';
 import 'package:assignment_app/home_screen.dart';
 import 'package:assignment_app/providers/bottom_nav_provider.dart';
 import 'package:assignment_app/providers/tab_provider.dart';
@@ -23,6 +24,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ).copyWith(
+          scaffoldBackgroundColor: CustomColors.whiteColor,
+          appBarTheme: AppBarTheme(
+            backgroundColor: CustomColors.whiteColor,
+            surfaceTintColor: CustomColors.whiteColor,
+            shadowColor: CustomColors.whiteColor,
+          ),
         ),
         home: const HomeScreen(),
       ),
