@@ -1,5 +1,8 @@
+import 'package:assignment_app/custom_colors.dart';
+import 'package:assignment_app/tab_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,10 +13,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  final List<String> tabs = ["Project", "Saved", "Shared", "Achievement"];
+
   @override
   void initState() {
-    _tabController = TabController(length: 2, vsync: this);
     super.initState();
   }
 
@@ -33,9 +36,52 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
       ),
-      body: TabBar(
-        controller: _tabController,
-        tabs: [Text("Project"), Text("Saved")],
+      body: Consumer<TabProvider>(
+        builder:
+            (context, tabProvider, child) => Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    tabs.length,
+                    (index) => Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        onTap: () {
+                          tabProvider.changeTab(index);
+                        },
+                        child: AnimatedContainer(
+                          alignment: Alignment.center,
+                          duration: Duration(milliseconds: 300),
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                width: 2,
+                                color:
+                                    tabProvider.tabNumber == index
+                                        ? CustomColors.deepOrangeColor
+                                        : CustomColors.greyColor,
+                              ),
+                            ),
+                          ),
+                          child: Text(
+                            tabs[index],
+                            style: TextStyle(
+                              color:
+                                  tabProvider.tabNumber == index
+                                      ? CustomColors.deepOrangeColor
+                                      : CustomColors.textGreyColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
       ),
     );
   }
