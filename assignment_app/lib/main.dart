@@ -1,5 +1,5 @@
 import 'package:assignment_app/custom_colors.dart';
-import 'package:assignment_app/home_screen.dart';
+import 'package:assignment_app/nav_bar_controller_screen.dart';
 import 'package:assignment_app/providers/bottom_nav_provider.dart';
 import 'package:assignment_app/providers/tab_provider.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             shadowColor: CustomColors.whiteColor,
           ),
         ),
-        home: const HomeScreen(),
+        home: NavBarControllerScreen(),
       ),
     );
   }
