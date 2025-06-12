@@ -35,11 +35,24 @@ class _NavBarControllerScreenState extends State<NavBarControllerScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset("assets/images/bag.svg"),
+            visualDensity: VisualDensity(
+              horizontal: VisualDensity.minimumDensity,
+            ),
+            style: IconButton.styleFrom(minimumSize: Size(16.r, 20.r)),
+            icon: SvgPicture.asset(
+              "assets/images/bag.svg",
+              height: 20.r,
+              width: 16.r,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset("assets/images/bell.svg"),
+            style: IconButton.styleFrom(minimumSize: Size(16.r, 20.r)),
+            icon: SvgPicture.asset(
+              "assets/images/bell.svg",
+              height: 20.r,
+              width: 16.r,
+            ),
           ),
         ],
       );
