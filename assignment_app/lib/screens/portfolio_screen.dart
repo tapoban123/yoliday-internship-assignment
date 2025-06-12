@@ -5,6 +5,7 @@ import 'package:assignment_app/screens/tab_screens/projects_screen.dart';
 import 'package:assignment_app/screens/tab_screens/saved_screen.dart';
 import 'package:assignment_app/screens/tab_screens/shared_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class PortfolioScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class PortfolioScreen extends StatefulWidget {
 }
 
 class _PortfolioScreenState extends State<PortfolioScreen> {
-  final List<String> tabs = ["Project", "Saved", "Shared", "Achievement"];
+  final List<String> tabs = ["Project", "Saved", "Shared", "Achievment"];
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +37,11 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                       child: AnimatedContainer(
                         alignment: Alignment.center,
                         duration: Duration(milliseconds: 300),
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.sp),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
-                              width: 2,
+                              width: 2.sp,
                               color:
                                   tabProvider.tabNumber == index
                                       ? CustomColors.deepOrangeColor
@@ -51,6 +52,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                         child: Text(
                           tabs[index],
                           style: TextStyle(
+                            fontSize: 14.sp,
                             color:
                                 tabProvider.tabNumber == index
                                     ? CustomColors.deepOrangeColor
