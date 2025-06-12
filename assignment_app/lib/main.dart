@@ -38,8 +38,9 @@ class MyApp extends StatelessWidget {
                   elevation: 0,
                 ),
               ),
-              home: NavBarControllerScreen(),
+              home: child,
             ),
+        child: NavBarControllerScreen(),
       ),
     );
   }

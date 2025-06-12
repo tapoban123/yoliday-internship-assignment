@@ -37,11 +37,11 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                       child: AnimatedContainer(
                         alignment: Alignment.center,
                         duration: Duration(milliseconds: 300),
-                        padding: EdgeInsets.all(8.sp),
+                        padding: EdgeInsets.all(8.r),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
-                              width: 2.sp,
+                              width: 2.r,
                               color:
                                   tabProvider.tabNumber == index
                                       ? CustomColors.deepOrangeColor
@@ -52,7 +52,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                         child: Text(
                           tabs[index],
                           style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 14.r,
                             color:
                                 tabProvider.tabNumber == index
                                     ? CustomColors.deepOrangeColor

@@ -23,17 +23,17 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.0.sp).copyWith(top: 12.sp),
+      padding: EdgeInsets.symmetric(horizontal: 12.0.r).copyWith(top: 12.r),
       child: Column(
         children: [
           _SearchTextField(),
-          SizedBox(height: 12.h),
+          12.verticalSpace,
           Expanded(
             child: ListView.builder(
               itemCount: projectImages.length,
               itemBuilder:
                   (context, index) => Padding(
-                    padding: EdgeInsets.only(bottom: 14.0.sp),
+                    padding: EdgeInsets.only(bottom: 14.0.r),
                     child: _ProjectTile(
                       title: "Kemampuan Merangkum Tulisan",
                       image: projectImages[index],
@@ -57,31 +57,31 @@ class _SearchTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.sp),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide(color: CustomColors.greyColor),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.sp),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide(color: CustomColors.greyColor),
         ),
         hintText: "Search a project",
         hintStyle: TextStyle(color: CustomColors.textGreyColor),
         suffixIconConstraints: BoxConstraints(),
         suffixIcon: Padding(
-          padding: EdgeInsets.only(right: 10.0.sp),
+          padding: EdgeInsets.only(right: 10.0.r),
           child: Container(
-            width: 28.w,
-            height: 28.h,
+            width: 28.r,
+            height: 28.r,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.sp),
+              borderRadius: BorderRadius.circular(10.r),
               color: CustomColors.deepOrangeColor,
             ),
-            child: Icon(Icons.search, color: Colors.white, size: 14.sp),
+            child: Icon(Icons.search, color: Colors.white, size: 14.r),
           ),
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 12.sp),
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.r),
       ),
-      style: TextStyle(fontSize: 14.sp),
+      style: TextStyle(fontSize: 14.r),
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
@@ -105,16 +105,16 @@ class _ProjectTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10.sp),
+      borderRadius: BorderRadius.circular(10.r),
       child: Container(
-        height: 110.h,
-        width: double.infinity.w,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),
+        height: 110.r,
+        width: double.infinity.r,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.r)),
         child: Row(
           children: [
             SizedBox(
-              width: 110.w,
-              height: 110.h,
+              width: 110.r,
+              height: 110.r,
               child: Image.asset(image, fit: BoxFit.cover),
             ),
             Expanded(
@@ -126,21 +126,21 @@ class _ProjectTile extends StatelessWidget {
                     bottom: BorderSide(color: CustomColors.greyColor),
                   ),
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(10.sp),
-                    bottomRight: Radius.circular(10.sp),
+                    topRight: Radius.circular(10.r),
+                    bottomRight: Radius.circular(10.r),
                   ),
                 ),
-                padding: EdgeInsets.all(14.sp),
+                padding: EdgeInsets.all(14.r),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: 200.w,
+                      width: 200.r,
                       child: Text(
                         title,
                         style: TextStyle(
-                          fontSize: 14.sp,
+                          fontSize: 14.r,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -154,22 +154,22 @@ class _ProjectTile extends StatelessWidget {
                             Text(
                               subtitle,
                               style: TextStyle(
-                                fontSize: 10.sp,
+                                fontSize: 10.r,
                                 color: CustomColors.textColor,
                               ),
                             ),
                             Text(
                               bottomText,
                               style: TextStyle(
-                                fontSize: 10.sp,
+                                fontSize: 10.r,
                                 color: CustomColors.textGreyColor,
                               ),
                             ),
                           ],
                         ),
                         Container(
-                          width: 50.w,
-                          height: 26.h,
+                          width: 50.r,
+                          height: 26.r,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             gradient: LinearGradient(
@@ -186,7 +186,7 @@ class _ProjectTile extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
+                              fontSize: 14.r,
                             ),
                           ),
                         ),

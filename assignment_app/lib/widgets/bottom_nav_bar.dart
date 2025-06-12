@@ -1,6 +1,7 @@
 import 'package:assignment_app/custom_colors.dart';
 import 'package:assignment_app/providers/bottom_nav_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
@@ -21,12 +22,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 60.r,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(20).r,
+          topRight: Radius.circular(20).r,
         ),
         color: Theme.of(context).scaffoldBackgroundColor,
         boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 3)],
@@ -45,14 +46,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 24,
-                        height: 2,
+                        width: 24.r,
+                        height: 2.r,
                         color:
                             bottomNavProvider.selectedOption == index
                                 ? CustomColors.deepOrangeColor
                                 : Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      SizedBox(height: 5),
+                      5.verticalSpace,
                       SvgPicture.asset(
                         icons[index]["image"]!,
                         colorFilter: ColorFilter.mode(
@@ -62,7 +63,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           BlendMode.srcIn,
                         ),
                         height:
-                            bottomNavProvider.selectedOption == index ? 20 : 19,
+                            bottomNavProvider.selectedOption == index ? 24.r : 20.r,
                       ),
                       Text(
                         icons[index]["name"]!,
@@ -73,8 +74,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                                   : CustomColors.textGreyColor,
                           fontSize:
                               bottomNavProvider.selectedOption == index
-                                  ? 15
-                                  : null,
+                                  ? 12.r
+                                  : 12.r,
                         ),
                       ),
                     ],

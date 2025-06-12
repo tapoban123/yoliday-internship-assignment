@@ -5,6 +5,7 @@ import 'package:assignment_app/screens/portfolio_screen.dart';
 import 'package:assignment_app/screens/profile_screen.dart';
 import 'package:assignment_app/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
@@ -19,10 +20,18 @@ class _NavBarControllerScreenState extends State<NavBarControllerScreen> {
   PreferredSizeWidget screenAppbar() {
     final int screen = Provider.of<BottomNavProvider>(context).selectedOption;
     if (screen == 0) {
-      return AppBar(title: Text("Home"));
+      return AppBar(
+        title: Text(
+          "Home",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18.r),
+        ),
+      );
     } else if (screen == 1) {
       return AppBar(
-        title: Text("Portfolio", style: TextStyle(fontWeight: FontWeight.w500)),
+        title: Text(
+          "Portfolio",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18.r),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -35,9 +44,19 @@ class _NavBarControllerScreenState extends State<NavBarControllerScreen> {
         ],
       );
     } else if (screen == 3) {
-      return AppBar(title: Text("Input"));
+      return AppBar(
+        title: Text(
+          "Input",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18.r),
+        ),
+      );
     } else {
-      return AppBar(title: Text("Profile"));
+      return AppBar(
+        title: Text(
+          "Profile",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18.r),
+        ),
+      );
     }
   }
 
